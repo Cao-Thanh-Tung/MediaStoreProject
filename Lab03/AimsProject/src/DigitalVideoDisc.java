@@ -106,4 +106,14 @@ public class DigitalVideoDisc {
 		this.id = id;
 	}
 
+	// Cao Thanh Tung 20200569
+	// 6 Lab3
+	public String toString() {
+		return "DVD - " + this.title + " - "+ this.category +" - "+ this.director + " - "+this.length+": "+this.cost+"$";
+	}
+	boolean isMatch(String title) {
+		String thisTitle = this.title.toLowerCase();
+		title = "(.*)"+title.toLowerCase()+"(.*)";
+		return thisTitle.matches(title);
+	}
 }

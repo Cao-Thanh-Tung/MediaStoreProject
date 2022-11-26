@@ -127,4 +127,49 @@ public class Cart {
 
 		return cost;
 	}
+	
+	// Cao Thanh Tung 20200569
+	// 6 Lab3
+	public void print() {
+		float cost = 0f;
+		int index = 0;
+		System.out.println("*********************************CART************************************");
+		for(DigitalVideoDisc disc:itemsOrdered){
+			index++;
+			cost += disc.getCost();
+			System.out.println(index+". "+disc);
+		}
+		System.out.println("Total cost: "+ cost+"$");
+		System.out.println("*************************************************************************");
+	}
+	
+	// Cao Thanh Tung 20200569
+	// 6 Lab3
+	public void searchById(int id) {
+		int index = 0;
+		for(DigitalVideoDisc disc:itemsOrdered){
+			if(id == disc.getId()) {	
+				index++;
+				System.out.println(index+". "+disc);
+			}
+		}
+		if(index == 0) {
+			System.out.println("Khong tim thay ket qua phu hop. Cao Thanh Tung 20200569");
+		}
+	}
+	
+	// Cao Thanh Tung 20200569
+	// 6 Lab3
+	public void searchByTitle(String title) {
+		int index = 0;
+		for(DigitalVideoDisc disc:itemsOrdered){
+			if(disc.isMatch(title)) {
+				index++;
+				System.out.println(index+". "+disc);				
+			}
+		}
+		if(index == 0) {
+			System.out.println("Khong tim thay ket qua phu hop. Cao Thanh Tung 20200569");
+		}
+	}
 }
