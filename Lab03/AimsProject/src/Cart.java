@@ -19,6 +19,7 @@ public class Cart {
 		this.qtyOrdered = qtyOrdered;
 	}
 
+	
 	public void addDigitalVideoDisc(DigitalVideoDisc disc) {
 		if (itemsOrdered.size() == MAX_NUMBERS_ORDERED) {
 			// Thông báo đã tràn
@@ -38,7 +39,7 @@ public class Cart {
 	// Cao Thanh Tung 20200569
 	public void addDigitalVideoDisc(DigitalVideoDisc... dvdList){
 		// Kiểm tra xem có thêm được tất cả các dvd trong dvdList vào không
-		if (itemsOrdered.size() + dvdList.length > MAX_NUMBERS_ORDERED) {
+		if (itemsOrdered.size() + dvdList.length >= MAX_NUMBERS_ORDERED) {
 			// Thông báo tràn và không thêm đĩa nào vào cả, dừng hàm luôn.
 			System.out.println("Đã tràn items. Không thêm được danh sách dvd.");
 			return;
@@ -76,7 +77,24 @@ public class Cart {
 //	}
 
 
-
+	// Practice 2.2 Lab3
+	// overloading by differing the number of parameters.
+	// Cao Thanh Tung 20200569
+	public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
+		if (itemsOrdered.size() + 2 >= MAX_NUMBERS_ORDERED) {
+			// Thông báo đã tràn
+			System.out.println("Đã tràn items. Cao Thanh Tung 20200569");
+			return;
+		}
+		// Thêm đĩa vào
+		itemsOrdered.add(dvd1);
+		itemsOrdered.add(dvd2);
+		// Cập nhật số lượng đĩa.
+		this.qtyOrdered += 2;
+		// Thông báo đĩa đã được thêm vào
+		System.out.println(dvd1.getTitle() + " và "+ dvd2.getTitle() + " đã được thêm vào!");
+	}
+	
 	public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
 		if (itemsOrdered.isEmpty()) {
 			// in ra là rỗng

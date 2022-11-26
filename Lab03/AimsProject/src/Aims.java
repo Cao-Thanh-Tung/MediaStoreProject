@@ -11,18 +11,25 @@ public class Aims {
 		DigitalVideoDisc dvd4 = new DigitalVideoDisc("Superman", "Animation", 18.99f);
 		DigitalVideoDisc dvd5 = new DigitalVideoDisc("Ironman", "Animation", 18.99f);
 		DigitalVideoDisc dvd6 = new DigitalVideoDisc("Doremon", "Animation", 18.99f);
-
+		DigitalVideoDisc dvd7 = new DigitalVideoDisc("Naruto", "Animation", 18.99f);
+		DigitalVideoDisc dvd8 = new DigitalVideoDisc("Onepiece", "Animation", 18.99f);
+		DigitalVideoDisc dvd9 = new DigitalVideoDisc("One punch man", "Animation", 18.99f);
+		
 		// input is a disc
-		anOrder.addDigitalVideoDisc(dvd4);
+		anOrder.addDigitalVideoDisc(dvd1);
 		System.out.println("Total Cost is: " + anOrder.totalCost());
 		
-		DigitalVideoDisc dvdList[] = {dvd1, dvd2, dvd3};
+		DigitalVideoDisc dvdList[] = {dvd2, dvd3, dvd4};
 		// input is a list of disc
 		anOrder.addDigitalVideoDisc(dvdList);
 		System.out.println("Total Cost is: " + anOrder.totalCost());
 		
 		// method allows to pass an arbitrary number of arguments for dvd
-		anOrder.addDigitalVideoDisc(dvd5, dvd6);
+		anOrder.addDigitalVideoDisc(dvd5, dvd6, dvd7);
+		System.out.println("Total Cost is: " + anOrder.totalCost());
+		
+		// input is 2 disc
+		anOrder.addDigitalVideoDisc(dvd8, dvd9);
 		System.out.println("Total Cost is: " + anOrder.totalCost());
 	}
 }
