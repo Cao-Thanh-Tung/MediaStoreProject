@@ -21,15 +21,61 @@ public class Cart {
 
 	public void addDigitalVideoDisc(DigitalVideoDisc disc) {
 		if (itemsOrdered.size() == MAX_NUMBERS_ORDERED) {
-			// in ra đã tràn
-			System.out.println("Đã tràn items");
+			// Thông báo đã tràn
+			System.out.println("Đã tràn items. Cao Thanh Tung");
 			return;
 		}
+		// Thêm đĩa vào
 		itemsOrdered.add(disc);
+		// Cập nhật số lượng đĩa.
 		this.qtyOrdered += 1;
-		// in ra đã được thêm vào
+		// Thông báo đĩa đã được thêm vào
 		System.out.println(disc.getTitle() + " đã được thêm vào!");
 	}
+
+	// Practice 2.1 Lab3
+	// overloading, allows to pass an arbitrary number of arguments for dvd
+	// Cao Thanh Tung 20200569
+	public void addDigitalVideoDisc(DigitalVideoDisc... dvdList){
+		// Kiểm tra xem có thêm được tất cả các dvd trong dvdList vào không
+		if (itemsOrdered.size() + dvdList.length > MAX_NUMBERS_ORDERED) {
+			// Thông báo tràn và không thêm đĩa nào vào cả, dừng hàm luôn.
+			System.out.println("Đã tràn items. Không thêm được danh sách dvd.");
+			return;
+		}
+		// Nếu cho thêm được tất cả các dvd trong dvdList vào thì ta thực hiện thêm từng đĩa.
+		for(int i = 0; i < dvdList.length; i++){
+			// Thêm vào đĩa thứ i trong danh sách dvdList
+			itemsOrdered.add(dvdList[i]);
+			// Thông báo dvd đã được thêm vào
+			System.out.println(dvdList[i].getTitle() + " đã được thêm vào thành công!");
+		}
+		// Cập nhật số lượng dvd.
+		this.qtyOrdered += dvdList.length;
+	}
+	
+	// Practice 2.1 Lab3
+	// overloading, parameter is array
+	// Cao Thanh Tung 20200569
+//	public void addDigitalVideoDisc(DigitalVideoDisc [] dvdList){
+//		// Kiểm tra xem có thêm được tất cả các dvd trong dvdList vào không
+//		if (itemsOrdered.size() + dvdList.length > MAX_NUMBERS_ORDERED) {
+//			// Thông báo tràn và không thêm đĩa nào vào cả, dừng hàm luôn.
+//			System.out.println("Đã tràn items. Không thêm được danh sách dvd.");
+//			return;
+//		}
+//		// Nếu cho thêm được tất cả các dvd trong dvdList vào thì ta thực hiện thêm từng đĩa.
+//		for(int i = 0; i < dvdList.length; i++){
+//			// Thêm vào đĩa thứ i trong danh sách dvdList
+//			itemsOrdered.add(dvdList[i]);
+//			// Thông báo dvd đã được thêm vào
+//			System.out.println(dvdList[i].getTitle() + " đã được thêm vào thành công!");
+//		}
+//		// Cập nhật số lượng dvd.
+//		this.qtyOrdered += dvdList.length;
+//	}
+
+
 
 	public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
 		if (itemsOrdered.isEmpty()) {
