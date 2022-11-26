@@ -7,8 +7,14 @@ public class DigitalVideoDisc {
 	private String director;
 	private int length;
 	private float cost;
-
+	// Cao Thanh Tung 20200569
+	// id for instance
+	private int id;
+	private static int nbDigitalVideoDiscs = 0;
 	public DigitalVideoDisc() {
+		nbDigitalVideoDiscs += 1;
+		// set id for instance
+		this.id = nbDigitalVideoDiscs;
 	}
 
 	public DigitalVideoDisc(String title) {
@@ -78,6 +84,14 @@ public class DigitalVideoDisc {
 
 	public void setCost(float cost) {
 		this.cost = cost;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }
