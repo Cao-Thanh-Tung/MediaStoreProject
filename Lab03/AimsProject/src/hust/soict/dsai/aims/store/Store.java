@@ -1,6 +1,7 @@
+package hust.soict.dsai.aims.store;
 import java.util.ArrayList;
 import java.util.List;
-
+import hust.soict.dsai.aims.disc.DigitalVideoDisc;
 // Cao Thanh Tung 20200569
 public class Store {
 	private static int MAX_NUMBERS = 20;

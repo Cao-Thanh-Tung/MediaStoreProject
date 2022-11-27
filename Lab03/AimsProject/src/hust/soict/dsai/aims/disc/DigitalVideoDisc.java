@@ -1,3 +1,4 @@
+package hust.soict.dsai.aims.disc;
 
 
 public class DigitalVideoDisc {
@@ -111,7 +112,7 @@ public class DigitalVideoDisc {
 	public String toString() {
 		return "DVD - " + this.title + " - "+ this.category +" - "+ this.director + " - "+this.length+": "+this.cost+"$";
 	}
-	boolean isMatch(String title) {
+	public boolean isMatch(String title) {
 		String thisTitle = this.title.toLowerCase();
 		title = "(.*)"+title.toLowerCase()+"(.*)";
 		return thisTitle.matches(title);
