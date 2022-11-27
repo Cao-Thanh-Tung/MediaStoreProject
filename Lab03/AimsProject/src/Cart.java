@@ -144,7 +144,7 @@ public class Cart {
 	}
 	
 	// Cao Thanh Tung 20200569
-	// 6 Lab3
+	// 6 Lab3 search cart
 	public void searchById(int id) {
 		int index = 0;
 		for(DigitalVideoDisc disc:itemsOrdered){
@@ -159,7 +159,7 @@ public class Cart {
 	}
 	
 	// Cao Thanh Tung 20200569
-	// 6 Lab3
+	// 6 Lab3 search cart
 	public void searchByTitle(String title) {
 		int index = 0;
 		for(DigitalVideoDisc disc:itemsOrdered){
