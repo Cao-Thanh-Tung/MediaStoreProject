@@ -1,7 +1,14 @@
 package hust.soict.dsai.aims.media;
 // Cao Thanh Tung 20200569 Lab4 mission 5.2
 // Create Track class
-public class Track {
+public class Track implements Playable {
+
+	@Override
+	public void play() {
+		System.out.println("Playing DVD: " + this.getTitle());
+		System.out.println("DVD length: " + this.getLength());
+	}
+
 	// add fields and getter
 	private String title;
 	private int length;
