@@ -58,4 +58,16 @@ public abstract class Media {
 		title = "(.*)"+title.toLowerCase()+"(.*)";
 		return thisTitle.matches(title);
 	}
+	@Override
+	public boolean equals(Object obj) {
+		// Cao Thanh Tung 20200569 Lab4
+		if(obj instanceof Media) {
+			Media media = (Media) obj;
+			if(media.title.equals(this.title)) {
+				return true;
+			}
+		}
+			return false;
+	}
+	
 }

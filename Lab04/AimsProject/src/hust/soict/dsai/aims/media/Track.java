@@ -24,7 +24,7 @@ public class Track implements Playable {
 	}
 	@Override
 	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
+		// Cao Thanh Tung 20200569 Lab4
 		if(obj instanceof Track) {
 			Track track = (Track) obj;
 			if(track.title.equals(this.title) && track.length == this.length) {
