@@ -18,20 +18,5 @@ public class Aims {
 		DigitalVideoDisc dvd9 = new DigitalVideoDisc("One punch man", "Animation","George Lucas",87, 18.99f);
 		
 		// input is a disc
-		anOrder.addDigitalVideoDisc(dvd1);
-		System.out.println("Total Cost is: " + anOrder.totalCost());
-		
-		DigitalVideoDisc dvdList[] = {dvd2, dvd3, dvd4};
-		// input is a list of disc
-		anOrder.addDigitalVideoDisc(dvdList);
-		System.out.println("Total Cost is: " + anOrder.totalCost());
-		
-		// method allows to pass an arbitrary number of arguments for dvd
-		anOrder.addDigitalVideoDisc(dvd5, dvd6, dvd7);
-		System.out.println("Total Cost is: " + anOrder.totalCost());
-		
-		// input is 2 disc
-		anOrder.addDigitalVideoDisc(dvd8, dvd9);
-		System.out.println("Total Cost is: " + anOrder.totalCost());
 	}
 }
