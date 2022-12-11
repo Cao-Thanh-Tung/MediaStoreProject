@@ -1,13 +1,13 @@
 package hust.soict.dsai.test.disc;
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
 
 // Cao Thanh Tung 20200569
 public class TestPassingParameter {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
-		DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cinderella");
+		DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Naruto", "Animation","George Lucas",87, 18.99f);
+		DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Doremon", "Animation","George Lucas",87, 18.99f);
 		
 		realSwap(jungleDVD, cinderellaDVD);
 		System.out.println("Cao Thanh Tung, jungle dvd title: " + jungleDVD.getTitle());

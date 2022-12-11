@@ -1,6 +1,6 @@
 package hust.soict.dsai.test.cart;
 import hust.soict.dsai.aims.cart.Cart;
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
 
 //Cao Thanh Tung 20200569
 public class CartTest {
@@ -15,7 +15,7 @@ public class CartTest {
 		DigitalVideoDisc dvd2 = new DigitalVideoDisc("Start Wars", "Science Fiction", "George Lucas", 87, 24.95f);
 		cart.addDigitalVideoDisc(dvd2);
 		
-		DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
+		DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", "George Lucas", 87, 18.99f);
 		cart.addDigitalVideoDisc(dvd3);
 		
 		// Test the print method
