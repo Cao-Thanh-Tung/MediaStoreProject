@@ -8,6 +8,7 @@ public abstract class Media {
 	private String title;
 	private String category;
 	private float cost;
+	private static int numberOfElements = 0 ;
 	public int getId() {
 		return id;
 	}
@@ -37,18 +38,21 @@ public abstract class Media {
 		super();
 	}
 	
-	public Media(int id) {
+	public Media() {
 		super();
-		this.id = id;
+		this.id = numberOfElements +1 ;
+		numberOfElements += 1;
 	}
-	public Media(int id, String title) {
+	public Media(String title) {
 		super();
-		this.id = id;
+		this.id = numberOfElements +1;
+		numberOfElements += 1;
 		this.title = title;
 	}
-	public Media(int id, String title, String category, float cost) {
+	public Media(String title, String category, float cost) {
 		super();
-		this.id = id;
+		this.id = numberOfElements +1;
+		numberOfElements += 1;
 		this.title = title;
 		this.category = category;
 		this.cost = cost;

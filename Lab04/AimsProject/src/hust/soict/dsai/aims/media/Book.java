@@ -6,8 +6,8 @@ import java.util.List;
 // Cao Thanh Tung 20200569
 public class Book extends Media{
 	private List<String> authors = new ArrayList<String>();
-	public Book() {
-		// TODO Auto-generated constructor stub
+	public Book(String title, String category, float cost) {
+		super(title, category, cost);
 	}
 	// Cao Thanh Tung 20200569
 	// Lab4 mission 3

@@ -16,8 +16,8 @@ public class CompactDisc extends Disc implements Playable {
 	// Cao Thanh Tung 20200569 Lab4 mission 5.3
 	private String artist;
 	private ArrayList<Track> tracks = new ArrayList<Track>();
-	public CompactDisc(int id, String title, String category, float cost, int length, String director, String artist) {
-		super(id, title, category, cost, length, director);
+	public CompactDisc(String title, String category, float cost, int length, String director, String artist) {
+		super(title, category, cost, length, director);
 		this.artist = artist;
 	}
 	// create getter for Artist
