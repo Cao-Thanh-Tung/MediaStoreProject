@@ -5,7 +5,7 @@ import java.util.List;
 
 // Cao Thanh Tung 20200569 Lab4 mission 5
 public class CompactDisc extends Disc implements Playable {
-	// Cao Thanh Tung 20200569 Lab4 mission 5.3
+	// Cao Thanh Tung 20200569 Lab4 mission 6
 	@Override
 	public void play() {
 		System.out.println("Title: "+ this.getTitle()+ " Artist"+ this.getArtist());
@@ -13,6 +13,7 @@ public class CompactDisc extends Disc implements Playable {
 			track.play();
 		}
 	}
+	// Cao Thanh Tung 20200569 Lab4 mission 5.3
 	private String artist;
 	private ArrayList<Track> tracks = new ArrayList<Track>();
 	public CompactDisc(int id, String title, String category, float cost, int length, String director, String artist) {
