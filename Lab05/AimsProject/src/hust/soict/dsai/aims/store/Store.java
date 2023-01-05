@@ -6,6 +6,9 @@ import hust.soict.dsai.aims.media.Media;
 // Cao Thanh Tung 20200569
 public class Store {
 	private ArrayList<Media> itemsInStore = new ArrayList<Media>();
+	public ArrayList<Media> getItemsInStore() {
+		return itemsInStore;
+	}
 	public void addMedia(Media... MediaList) {
 		for(Media media: MediaList) {
 			itemsInStore.add(media);
