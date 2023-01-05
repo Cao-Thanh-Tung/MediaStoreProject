@@ -1,18 +1,10 @@
 package hust.soict.dsai.aims.store;
 import java.util.ArrayList;
-import java.util.List;
-
-import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import hust.soict.dsai.aims.media.Media;
 // Cao Thanh Tung 20200569
 public class Store {
-	private static int MAX_NUMBERS = 20;
-	private List<Media> itemsInStore = new ArrayList<Media>(MAX_NUMBERS);
+	private ArrayList<Media> itemsInStore = new ArrayList<Media>();
 	public void addMedia(Media... MediaList) {
-		if(itemsInStore.size() + MediaList.length > MAX_NUMBERS) {
-			System.out.println("Vượt quá sức chứa của store. Cao Thanh Tung 20200569");
-			return;
-		}
 		for(Media media: MediaList) {
 			itemsInStore.add(media);
 			System.out.println(media.getTitle() +" được thêm vào store thành công. Cao Thanh Tung 20200569");
