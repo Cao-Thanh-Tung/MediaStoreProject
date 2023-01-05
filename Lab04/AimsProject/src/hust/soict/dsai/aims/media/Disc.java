@@ -11,9 +11,6 @@ public class Disc extends Media{
 	public String getDirector() {
 		return director;
 	}
-	public Disc(String title) {
-		super(title);
-	}
 	public void setLength(int length) {
 		this.length = length;
 	}
@@ -25,10 +22,6 @@ public class Disc extends Media{
 		this.length = length;
 		this.director = director;
 	}
-	public Disc() {
-		super();
-	}
-
 }
 
 

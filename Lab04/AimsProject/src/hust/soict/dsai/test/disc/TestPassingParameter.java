@@ -23,11 +23,11 @@ public class TestPassingParameter {
 		o2 = tmp;
 	}
 	
-	public static void changeTitle(DigitalVideoDisc dvd, String title) {
-		String oldTitle = dvd.getTitle();
-		dvd.setTitle(title);
-		dvd = new DigitalVideoDisc(oldTitle);
-	}
+//	public static void changeTitle(DigitalVideoDisc dvd, String title) {
+//		String oldTitle = dvd.getTitle();
+//		dvd.setTitle(title);
+//		dvd = new DigitalVideoDisc(oldTitle);
+//	}
 	
 	// Cao Thanh Tung 20200569
 	// Write a swap() method that can correctly swap the two objects

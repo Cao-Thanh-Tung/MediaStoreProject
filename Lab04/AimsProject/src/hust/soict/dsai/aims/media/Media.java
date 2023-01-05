@@ -36,10 +36,6 @@ public abstract class Media {
 	
 	public Media() {
 		super();
-	}
-	
-	public Media() {
-		super();
 		this.id = numberOfElements +1 ;
 		numberOfElements += 1;
 	}

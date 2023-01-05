@@ -6,6 +6,7 @@ import java.util.List;
 // Cao Thanh Tung 20200569 Lab4 mission 5
 public class CompactDisc extends Disc implements Playable {
 	// Cao Thanh Tung 20200569 Lab4 mission 6
+	
 	@Override
 	public void play() {
 		System.out.println("Title: "+ this.getTitle()+ " Artist"+ this.getArtist());

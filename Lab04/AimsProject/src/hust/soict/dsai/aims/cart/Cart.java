@@ -1,12 +1,9 @@
 package hust.soict.dsai.aims.cart;
-
 import java.util.ArrayList;
-import java.util.List;
 import hust.soict.dsai.aims.media.Media;
 public class Cart {
 	// Cao Thanh Tung 20200569 Lab4 mission 7
 	public ArrayList<Media> itemsOrdered = new ArrayList<Media>();
-	public static int MAX_NUMBERS_ORDERED = 20;
 
 	public float totalCost() {
 		float cost = 0.0f;
@@ -24,14 +21,9 @@ public class Cart {
 	// Cao Thanh Tung 20200569 Lab4 mision 7
 	public void addMedia(Media... media) {
 		// Kiem tra xem co them duoc nua khong
-		if(itemsOrdered.size() + media.length > MAX_NUMBERS_ORDERED) {
-			System.out.println("Danh sach da day!");
-		}else {
-			for(Media a: media) {
-				itemsOrdered.add(a);
-				System.out.println(a.getTitle()+ " da duoc them thanh cong!");
-			}
-			
+		for(Media a: media) {
+			itemsOrdered.add(a);
+			System.out.println(a.getTitle()+ " da duoc them thanh cong!");
 		}
 	}
 	
