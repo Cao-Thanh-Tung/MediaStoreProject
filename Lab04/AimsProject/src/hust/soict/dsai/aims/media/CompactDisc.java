@@ -1,7 +1,6 @@
 package hust.soict.dsai.aims.media;
 
 import java.util.ArrayList;
-import java.util.List;
 
 // Cao Thanh Tung 20200569 Lab4 mission 5
 public class CompactDisc extends Disc implements Playable {
@@ -27,7 +26,7 @@ public class CompactDisc extends Disc implements Playable {
 //	Create methods addTrack() and removeTrack()
 	public void addTrack(Track track) {
 		// kiem tra xem track da co trong danh sach chua, neu chua thi them vao.
-		if(this.tracks.indexOf(track) == -1) {
+		if(!this.tracks.contains(track)) {
 			this.tracks.add(track);
 			System.out.println(track.getTitle() + " da duoc them thanh cong.");
 		}else {
@@ -36,7 +35,7 @@ public class CompactDisc extends Disc implements Playable {
 	};
 	public void removeTrack(Track track) {
 		// kiem tra xem track co trong danh sach khong, neu co thi xoa di.
-		if(this.tracks.indexOf(track) != -1) {
+		if(this.tracks.contains(track)) {
 			this.tracks.remove(track);
 			System.out.println(track.getTitle() + " da xoa thanh cong.");
 		}else {
@@ -51,5 +50,9 @@ public class CompactDisc extends Disc implements Playable {
 			sumLength += track.getLength();
 		}
 		return sumLength;
+	}
+	
+	public String toString() {
+		return "CD - " + this.getTitle() + " - "+ this.getCategory() +" - "+ this.getDirector() + " - "+this.getLength()+": "+this.getCost()+"$";
 	}
 }

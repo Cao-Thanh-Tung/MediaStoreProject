@@ -1,6 +1,11 @@
 package hust.soict.dsai.aims.media;
+
+import java.util.Comparator;
+
 // Cao Thanh Tung 20200569
 public abstract class Media {
+	public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
+	public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
 	// Cao Thanh Tung 20200569
 	// Lab4 mission4
 	// add fields and accessor method
@@ -69,5 +74,7 @@ public abstract class Media {
 		}
 			return false;
 	}
-	
+	public void sort() {
+		
+	}
 }

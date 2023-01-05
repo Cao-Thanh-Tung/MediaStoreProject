@@ -9,6 +9,10 @@ public class Book extends Media{
 	public Book(String title, String category, float cost) {
 		super(title, category, cost);
 	}
+	public Book(String title, String category, float cost, List<String> authors) {
+		super(title, category, cost);
+		this.authors = authors;
+	}
 	// Cao Thanh Tung 20200569
 	// Lab4 mission 3
 	// create addAuthor(String authorName) and removeAuthor(String authorName) for the Book class
@@ -23,6 +27,9 @@ public class Book extends Media{
 		if(this.authors.indexOf(authorName) != -1) {
 			this.authors.remove(authorName);
 		}
+	}
+	public String toString() {
+		return "CD - " + this.getTitle() + " - "+ this.getCategory() +": "+this.getCost()+"$";
 	}
 
 }
