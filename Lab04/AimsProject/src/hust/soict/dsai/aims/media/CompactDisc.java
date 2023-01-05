@@ -6,20 +6,18 @@ import java.util.List;
 // Cao Thanh Tung 20200569 Lab4 mission 5
 public class CompactDisc extends Disc implements Playable {
 	// Cao Thanh Tung 20200569 Lab4 mission 6
-	
+	private String artist;
+	private ArrayList<Track> tracks = new ArrayList<Track>();
+	public CompactDisc(String title, String category, float cost, int length, String director, String artist) {
+		super(title, category, cost, length, director);
+		this.artist = artist;
+	}
 	@Override
 	public void play() {
 		System.out.println("Title: "+ this.getTitle()+ " Artist"+ this.getArtist());
 		for(Track track: tracks) {
 			track.play();
 		}
-	}
-	// Cao Thanh Tung 20200569 Lab4 mission 5.3
-	private String artist;
-	private ArrayList<Track> tracks = new ArrayList<Track>();
-	public CompactDisc(String title, String category, float cost, int length, String director, String artist) {
-		super(title, category, cost, length, director);
-		this.artist = artist;
 	}
 	// create getter for Artist
 	public String getArtist() {
