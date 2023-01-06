@@ -2,8 +2,6 @@ package hust.soict.dsai.aims.screen;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -18,11 +16,12 @@ import hust.soict.dsai.aims.media.Playable;
 public class MediaStore extends JPanel {
 	// Cao Thanh Tung 20200569
 	private Media media;
+	// 2 nut ButtonAdd va Button Play de public de gan su o lop khac
 	public JButton ButtonAdd;
 	public JButton ButtonPlay;
-	public MediaStore(Media media) {
+	public MediaStore(Media mediaInit) {
 		
-		this.media = media;
+		this.media = mediaInit;
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
 		JLabel title = new JLabel(media.getTitle());
@@ -36,7 +35,8 @@ public class MediaStore extends JPanel {
 		ButtonAdd = new JButton("Add to cart");
 		container.add(ButtonAdd);
 		if(media instanceof Playable) {
-			container.add(new JButton("Play"));
+			ButtonPlay = new JButton("Play");
+			container.add(ButtonPlay);
 		}
 		
 		this.add(Box.createVerticalGlue());

@@ -23,6 +23,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import hust.soict.dsai.aims.cart.Cart;
+import hust.soict.dsai.aims.media.Book;
 import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import hust.soict.dsai.aims.media.Disc;
 import hust.soict.dsai.aims.media.Media;
@@ -90,7 +91,7 @@ public class StoreScreen extends JFrame {
 			// gan su kien cho tung cai button
 			Media tmp = mediaInStore.get(i);
 			center.add(cell);
-			// Gan su kien cho cac nut
+			// Gan Su kien cho nut Add
 			// Cao Thanh Tung 20200569
 			cell.ButtonAdd.addActionListener(new ActionListener(){
 				@Override
@@ -100,18 +101,17 @@ public class StoreScreen extends JFrame {
 				}
 				
 			});
-			cell.ButtonPlay.addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					// Choi nhac
-					if(tmp instanceof Playable) {
+			// neu media la 1 the hien cua Playable thi gan su kien cho nut Play
+			if(tmp instanceof Playable) {
+				cell.ButtonPlay.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// Choi nhac
 						Playable tmp1 = (Playable) tmp;
-						tmp1.play();
+						tmp1.play();	
 					}
-					
-				}
-			});
+				});
+			};
 		}
 		
 		return center;
@@ -129,21 +129,5 @@ public class StoreScreen extends JFrame {
 		setVisible(true);
 		setTitle("Store");
 		setSize(1024, 768);
-	}
-	
-	public static void main(String[] args) {
-		Store store = new Store();
-		Cart cart = new Cart();
-		DigitalVideoDisc dvd1 = new DigitalVideoDisc("The lion King", "Animation", "Roger Allers", 97, 19.95f);
-		DigitalVideoDisc dvd2 = new DigitalVideoDisc("Start Wars", "Science Fiction", "George Lucas", 87, 24.95f);
-		DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation","George Lucas", 87, 18.99f);
-		DigitalVideoDisc dvd4 = new DigitalVideoDisc("The lion King", "Animation", "Roger Allers", 97, 19.95f);
-		DigitalVideoDisc dvd5 = new DigitalVideoDisc("Start Wars", "Science Fiction", "George Lucas", 87, 24.95f);
-		DigitalVideoDisc dvd6 = new DigitalVideoDisc("Aladin", "Animation","George Lucas", 87, 18.99f);
-		DigitalVideoDisc dvd7 = new DigitalVideoDisc("The lion King", "Animation", "Roger Allers", 97, 19.95f);
-		DigitalVideoDisc dvd8 = new DigitalVideoDisc("Start Wars", "Science Fiction", "George Lucas", 87, 24.95f);
-		DigitalVideoDisc dvd9 = new DigitalVideoDisc("Aladin", "Animation","George Lucas", 87, 18.99f);
-		store.addMedia(dvd1, dvd2, dvd3, dvd4, dvd5, dvd6, dvd7, dvd8,dvd9);
-		new StoreScreen(store, cart);
 	}
 }
