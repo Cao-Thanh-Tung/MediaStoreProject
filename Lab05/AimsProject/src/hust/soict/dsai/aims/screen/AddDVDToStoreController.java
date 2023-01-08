@@ -5,7 +5,9 @@ import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import hust.soict.dsai.aims.store.Store;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class AddDVDToStoreController {
 	// Cao Thanh Tung 20200569
@@ -38,6 +40,12 @@ public class AddDVDToStoreController {
     	String director = DVDDirector.getText();
     	int length = Integer.parseInt(DVDLength.getText());
     	store.addMedia(new DigitalVideoDisc(title, category, director, length, cost));
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Success");
+		alert.setHeaderText("Results:");
+		alert.setContentText("Them thanh cong!");
+
+		alert.showAndWait();
     }
     @FXML
     void seeStore(ActionEvent event) {
