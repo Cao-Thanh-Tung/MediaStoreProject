@@ -2,12 +2,15 @@ package hust.soict.dsai.aims.cart;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 
 import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import hust.soict.dsai.aims.media.Media;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 public class Cart {
 	// Cao Thanh Tung 20200569 Lab4 mission 7
-	public ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+	public ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 
 	public float totalCost() {
 		float cost = 0.0f;
@@ -157,4 +160,7 @@ public class Cart {
          }
          return count;
      }
+	public ObservableList<Media> getItemsOrdered() {
+		return this.itemsOrdered;
+	}
 }
