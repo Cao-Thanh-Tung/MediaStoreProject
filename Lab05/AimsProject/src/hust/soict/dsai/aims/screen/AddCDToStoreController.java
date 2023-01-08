@@ -36,19 +36,29 @@ public class AddCDToStoreController {
 
     @FXML
     void addCD(ActionEvent event) {
-    	float cost = Float.parseFloat(CDCost.getText());
-    	String artist = CDArtist.getText();
-    	String category = CDCategory.getText();
-    	String title = CDTitle.getText();
-    	String director = CDDirector.getText();
-    	int length = Integer.parseInt(CDLength.getText());
-    	store.addMedia(new CompactDisc(title, category, cost, length, director, artist));
-		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle("Success");
-		alert.setHeaderText("Results:");
-		alert.setContentText("Them thanh cong!");
+    	try {
+        	float cost = Float.parseFloat(CDCost.getText());
+        	String artist = CDArtist.getText();
+        	String category = CDCategory.getText();
+        	String title = CDTitle.getText();
+        	String director = CDDirector.getText();
+        	int length = Integer.parseInt(CDLength.getText());
+        	store.addMedia(new CompactDisc(title, category, cost, length, director, artist));
+    		Alert alert = new Alert(AlertType.INFORMATION);
+    		alert.setTitle("Success");
+    		alert.setHeaderText("Results:");
+    		alert.setContentText("Them thanh cong!");
 
-		alert.showAndWait();
+    		alert.showAndWait();
+    	}catch(Exception e) {
+    		Alert alert = new Alert(AlertType.INFORMATION);
+    		alert.setTitle("Fail");
+    		alert.setHeaderText("Results:");
+    		alert.setContentText("Them that bai!");
+
+    		alert.showAndWait();
+    	}
+
     }
 
     @FXML

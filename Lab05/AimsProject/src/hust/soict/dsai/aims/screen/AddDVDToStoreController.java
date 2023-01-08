@@ -34,18 +34,27 @@ public class AddDVDToStoreController {
 
     @FXML
     void addDVD(ActionEvent event) {
-    	float cost = Float.parseFloat(DVDCost.getText());
-    	String category = DVDCategory.getText();
-    	String title = DVDTitle.getText();
-    	String director = DVDDirector.getText();
-    	int length = Integer.parseInt(DVDLength.getText());
-    	store.addMedia(new DigitalVideoDisc(title, category, director, length, cost));
-		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle("Success");
-		alert.setHeaderText("Results:");
-		alert.setContentText("Them thanh cong!");
+    	try {
+        	float cost = Float.parseFloat(DVDCost.getText());
+        	String category = DVDCategory.getText();
+        	String title = DVDTitle.getText();
+        	String director = DVDDirector.getText();
+        	int length = Integer.parseInt(DVDLength.getText());
+        	store.addMedia(new DigitalVideoDisc(title, category, director, length, cost));
+    		Alert alert = new Alert(AlertType.INFORMATION);
+    		alert.setTitle("Success");
+    		alert.setHeaderText("Results:");
+    		alert.setContentText("Them thanh cong!");
 
-		alert.showAndWait();
+    		alert.showAndWait();
+    	}catch(Exception e) {
+    		Alert alert = new Alert(AlertType.INFORMATION);
+    		alert.setTitle("Fail");
+    		alert.setHeaderText("Results:");
+    		alert.setContentText("Them that bai!");
+
+    		alert.showAndWait();
+    	}
     }
     @FXML
     void seeStore(ActionEvent event) {
