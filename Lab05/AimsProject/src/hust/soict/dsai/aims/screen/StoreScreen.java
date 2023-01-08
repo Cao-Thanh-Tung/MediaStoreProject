@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-
+import javax.naming.LimitExceededException;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -29,10 +29,14 @@ import hust.soict.dsai.aims.media.Disc;
 import hust.soict.dsai.aims.media.Media;
 import hust.soict.dsai.aims.media.Playable;
 import hust.soict.dsai.aims.store.Store;
+import javafx.application.Platform;
+import javafx.stage.Stage;
 
 public class StoreScreen extends JFrame {
 	private Store store;
 	private Cart cart;
+	private CartScreen cartScreen;
+	private AddBookToStore addBookToStoreScreen;
 	// Cao Thanh Tung 20200569
 	JPanel createNorth() {
 		JPanel north = new JPanel();
@@ -45,9 +49,16 @@ public class StoreScreen extends JFrame {
 		JMenu menu = new JMenu("Options");
 		
 		JMenu smUpdateStore = new JMenu("Update Store");
-		smUpdateStore.add(new JMenuItem("Add Book"));
-		smUpdateStore.add(new JMenuItem("Add CD"));
-		smUpdateStore.add(new JMenuItem("Add DVD"));
+		
+		JMenuItem btnAddBook = new JMenuItem("Add Book");
+		JMenuItem btnAddCD = new JMenuItem("Add CD");
+		JMenuItem btnAddDVD = new JMenuItem("Add DVD");
+		btnAddBook.addActionListener(new AddBook(this, this.cart));
+		btnAddCD.addActionListener(new AddCD(this, this.cart));
+		btnAddDVD.addActionListener(new AddDVD(this, this.cart));
+		smUpdateStore.add(btnAddBook);
+		smUpdateStore.add(btnAddCD);
+		smUpdateStore.add(btnAddDVD);
 		
 		menu.add(smUpdateStore);
 		menu.add(new JMenuItem("View store"));
@@ -69,15 +80,26 @@ public class StoreScreen extends JFrame {
 		title.setFont(new Font(title.getFont().getName(), Font.PLAIN, 50));
 		title.setForeground(Color.CYAN);
 		
-		JButton cart = new JButton("View cart");
-		cart.setPreferredSize(new Dimension(100, 50));
-		cart.setMaximumSize(new Dimension(100,50));
+		JButton cartButton = new JButton("View cart");
+		cartButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				cartScreen.setVisible(true);
+				
+			}
+			
+		});
+		cartButton.setPreferredSize(new Dimension(100, 50));
+		cartButton.setMaximumSize(new Dimension(100,50));
 		
 		header.add(Box.createRigidArea(new Dimension(10,10)));
 		header.add(title);
 		header.add(Box.createHorizontalGlue());
-		header.add(cart);
+		header.add(cartButton);
 		header.add(Box.createRigidArea(new Dimension(10,10)));
+		
 		
 		return header;
 	}
@@ -86,7 +108,7 @@ public class StoreScreen extends JFrame {
 		center.setLayout(new GridLayout(3,3,2,2));
 		
 		ArrayList<Media> mediaInStore = store.getItemsInStore();
-		for(int i = 0; i<9; i++) {
+		for(int i = 0; i<mediaInStore.size(); i++) {
 			MediaStore cell = new MediaStore(mediaInStore.get(i));
 			// gan su kien cho tung cai button
 			Media tmp = mediaInStore.get(i);
@@ -116,6 +138,52 @@ public class StoreScreen extends JFrame {
 		
 		return center;
 	}
+	
+	public class AddBook implements ActionListener{
+		public Cart cart;
+		public AddBookToStore AddBookToStoreScreen;
+		public StoreScreen storeScreen;
+		public AddBook(StoreScreen storeScreen, Cart cart) {
+			this.cart = cart;
+			this.storeScreen = storeScreen;
+		}
+		@Override
+		public void actionPerformed(ActionEvent e) { 
+			storeScreen.dispose();
+			AddBookToStore addBookToStoreScreen = new AddBookToStore(store, this);
+		}
+	}
+	
+	public class AddCD implements ActionListener{
+		public Cart cart;
+		public AddCDToStore AddCDToStoreScreen;
+		public StoreScreen storeScreen;
+		public AddCD(StoreScreen storeScreen, Cart cart) {
+			this.cart = cart;
+			this.storeScreen = storeScreen;
+		}
+		@Override
+		public void actionPerformed(ActionEvent e) { 
+			storeScreen.dispose();
+			AddCDToStore addCDToStoreScreen = new AddCDToStore(store, this);
+		}
+	}
+	
+	public class AddDVD implements ActionListener{
+		public Cart cart;
+		public AddDVDToStore AddDVDToStoreScreen;
+		public StoreScreen storeScreen;
+		public AddDVD(StoreScreen storeScreen, Cart cart) {
+			this.cart = cart;
+			this.storeScreen = storeScreen;
+		}
+		@Override
+		public void actionPerformed(ActionEvent e) { 
+			storeScreen.dispose();
+			AddDVDToStore addDVDToStoreScreen = new AddDVDToStore(store, this);
+		}
+	}
+	
 	public StoreScreen(Store store, Cart cart) {
 		// Cao Thanh Tung 20200569
 		this.store = store;
@@ -127,6 +195,8 @@ public class StoreScreen extends JFrame {
 		cp.add(createCenter(), BorderLayout.CENTER);
 		
 		setVisible(true);
+		this.cartScreen = new CartScreen(cart);
+		this.cartScreen.setVisible(false);
 		setTitle("Store");
 		setSize(1024, 768);
 	}

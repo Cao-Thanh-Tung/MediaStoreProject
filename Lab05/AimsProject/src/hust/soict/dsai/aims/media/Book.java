@@ -13,6 +13,10 @@ public class Book extends Media{
 		super(title, category, cost);
 		this.authors = authors;
 	}
+	public Book(String title, String category, float cost, String authors) {
+		super(title, category, cost);
+		this.authors.add(authors);
+	}
 	// Cao Thanh Tung 20200569
 	// Lab4 mission 3
 	// create addAuthor(String authorName) and removeAuthor(String authorName) for the Book class
