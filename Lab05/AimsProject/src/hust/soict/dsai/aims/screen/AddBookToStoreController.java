@@ -4,6 +4,8 @@ import hust.soict.dsai.aims.media.Book;
 import hust.soict.dsai.aims.store.Store;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
@@ -36,6 +38,12 @@ public class AddBookToStoreController {
     	String category = bookCategory.getText();
     	String title = bookTitle.getText();
     	store.addMedia(new Book(title, category, cost, author));
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Success");
+		alert.setHeaderText("Results:");
+		alert.setContentText("Them thanh cong!");
+
+		alert.showAndWait();
     }
     
 
