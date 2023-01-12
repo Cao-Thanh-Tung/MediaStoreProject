@@ -1,4 +1,0 @@
-INDEX VERSION 1.131+C:\Users\caoth\OneDrive\Desktop\JavaLab\oolt.vn.721428.20221.20200569.caothanhtung\Lab03\.metadata\.plugins\org.eclipse.jdt.core
-2730459363.index
-1865797976.index
-2315386619.index
